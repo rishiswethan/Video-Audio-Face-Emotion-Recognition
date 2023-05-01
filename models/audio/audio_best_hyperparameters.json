@@ -1,0 +1,1 @@
+{"HOP_LENGTH": 512, "NUM_MFCC": 13, "N_FFT": 2048, "batch_size": 256, "conv_model": "resnet18", "dense_units": 512, "dropout_rate": 0.3, "l1_l2_reg": 0.0, "layers_batch_norm": true, "num_layers": 3, "val_acc": 0.7976887822151184}

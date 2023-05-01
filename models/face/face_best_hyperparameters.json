@@ -1,0 +1,1 @@
+{"batch_size": 256, "conv_model": "resnet34", "dense_units": 32, "dropout_rate": 0.0, "l1_l2_reg": 0.0, "layers_batch_norm": true, "normalise": true, "num_layers": 3, "prev_layers_trainable": true, "use_landmarks": false, "val_acc": 0.7384929060935974}

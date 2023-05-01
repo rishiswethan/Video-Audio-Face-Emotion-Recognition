@@ -1,0 +1,4 @@
+batch_size,conv_model,dense_units,dropout_rate,l1_l2_reg,layers_batch_norm,normalise,num_layers,prev_layers_trainable,use_landmarks,val_acc
+256,resnet34,32,0.0,0.0,True,True,3,True,False,0.7384929060935974
+256,squeezenet,32,0.0,0.0,True,True,3,True,False,0.6616283059120178
+256,vgg16,32,0.0,0.0,True,True,3,True,False,0.30101698637008667
