@@ -102,7 +102,7 @@ def _get_prediction(
         print("\n\nPrediction probabilities:\n", audio_utils.get_softmax_probs_string(pred_numpy, list(emotion_index_dict.values())))
 
     string = audio_utils.get_softmax_probs_string(pred_numpy, list(emotion_index_dict.values()))
-    string_img = emotion_index_dict[prediction_index] + ": " + str(round(max(pred_numpy) * 100, 2)) + "%"
+    string_img = emotion_index_dict[prediction_index] + ": " + str(round(max(pred_numpy) * 100)) + "%"
 
     return_objs = (emotion_index_dict[prediction_index], prediction_index, list(pred_numpy), img)
 
@@ -126,6 +126,7 @@ def _get_prediction(
         result_npy = np.array(result_pil, dtype=np.uint8)
 
         if feature_maps_flag:
+            # 
             target_layers = [
                 model.base_model_conv.layer1,
                 model.base_model_conv.layer2,
@@ -149,25 +150,32 @@ def _get_prediction(
 
         return_objs = (emotion_index_dict[prediction_index], prediction_index, list(pred_numpy), img, result_npy)
 
-    if imshow:
         if grad_cam_on_video:
             face_input = result_npy.copy()
         else:
             face_input = face_input_org.copy()
 
+        face_input = cv2.rectangle(face_input,
+                                   (face_input.shape[0] // 20, face_input.shape[0] // 20),
+                                   (int(face_input.shape[0] * 0.95), int(face_input.shape[0] * 0.95)),
+                                   (0, 255, 0),
+                                   max(face_input.shape[0] // 100, 1))
         face_input = cv2.resize(face_input, (face_config.FACE_SIZE * 5, face_config.FACE_SIZE * 5))
-        # face_input = cv2.rectangle(face_input, tl_xy, br_xy, (0, 255, 0), max(face_input.shape[0] // 100, 1))
         cv2.putText(img=face_input,
                     text=string_img,
-                    org=(face_input.shape[0] // 2, face_input.shape[0] // 10),
+                    org=(face_input.shape[0] // 15, face_input.shape[0] // 8),
                     fontFace=cv2.QT_FONT_NORMAL,
-                    fontScale=0.5,
+                    fontScale=0.75,
                     color=(0, 255, 0),
-                    thickness=1)
+                    thickness=2)
 
-        cv2.imshow("Face ", face_input)
+        if imshow:
+            cv2.imshow("face", face_input)
 
         if not video_mode:
+            cv2.imwrite(config.OUTPUT_FOLDER_PATH + "grad_cam.jpg", cv2.cvtColor(result_npy, cv2.COLOR_RGB2BGR))
+            cv2.imwrite(config.OUTPUT_FOLDER_PATH + "emotion.jpg", cv2.cvtColor(face_input, cv2.COLOR_BGR2RGB))
+
             cv2.waitKey(0)
             cv2.destroyAllWindows()
             cv2.waitKey(1)

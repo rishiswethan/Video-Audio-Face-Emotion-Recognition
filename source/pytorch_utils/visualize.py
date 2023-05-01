@@ -50,7 +50,7 @@ def create_gradcam(model, model_input, target_layer, device_name, square_size, v
     grad_cam_np = (grad_cam_np - np.min(grad_cam_np)) / (np.max(grad_cam_np) - np.min(grad_cam_np))
 
     # Convert Grad-CAM to PIL Image
-    grad_cam_pil = ImagePIL.fromarray(np.uint8(grad_cam_np * 255))
+    grad_cam_pil = ImagePIL.fromarray(np.uint8((1.0 - grad_cam_np) * 255))
 
     return grad_cam_pil
 
