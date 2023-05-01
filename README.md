@@ -174,24 +174,25 @@ lesser RAM for training and less than 8GB can run inference very easily. If you 
 ### Sample output:
 #### Face model:
 
-<img src="display_files/child smile.png" width="300" style="margin-right: 10px;">
-<img src="display_files/child_smile_emotion.jpg" width="200" style="margin-right: 10px;">
-<img src="display_files/child_smile_grad_cam.jpg" width="200" style="margin-right: 10px;">
-
-<p></p>
-
-<img src="display_files/nervous_woman.png" width="300" style="margin-right: 10px;">
-<img src="display_files/nervous_woman_emotion.jpg" width="200" style="margin-right: 10px;">
-<img src="display_files/nervous_woman_grad_cam.jpg" width="200" style="margin-right: 10px;">
-
-<p></p>
-
-<img src="display_files/disgust_2.png" width="300" style="margin-right: 10px;">
-<img src="display_files/disgust_emotion.jpg" width="200" style="margin-right: 10px;">
-<img src="display_files/disgust_grad_cam.jpg" width="200" style="margin-right: 10px;">
-
-<p></p>
-
-<img src="display_files/angry.png" width="300" style="margin-right: 10px;">
-<img src="display_files/angry_emotion.jpg" width="200" style="margin-right: 10px;">
-<img src="display_files/angry_grad_cam.jpg" width="200">
+<table>
+  <tr>
+    <td><img src="display_files/child smile.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/child_smile_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/child_smile_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
+  </tr>
+  <tr>
+    <td><img src="display_files/nervous_woman.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/nervous_woman_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/nervous_woman_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
+  </tr>
+  <tr>
+    <td><img src="display_files/disgust_2.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/disgust_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/disgust_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
+  </tr>
+  <tr>
+    <td><img src="display_files/angry.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/angry_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/angry_grad_cam.jpg" width="200"></td>
+  </tr>
+</table>
