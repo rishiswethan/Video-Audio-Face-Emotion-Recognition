@@ -156,19 +156,6 @@ I wrote the various paths for this in the config.py file.
     - The frames time series result, audio CNN result and sentiment results are passed through dense layer(s) to get the final emotion prediction.
 
 
-### Performance results:
-* #### Audio model:
-    - `val accuracy: 71.37%`
-* #### face image model:
-    - `val accuracy: 70.34%`
-* #### combined model (audio, face, transcript sentiment):
-    - `val accuracy: 92.64%`
-
-Test this yourself by choosing the "_predict on test set_" option in the run.py menu. You can retrain and get similar results from,
-`best_hyperparameters.json` that is stored in `models/<chosen_model>/`. This will be loaded by default when you choose the train option from the run.py menu.
-
-
-
 ### Note:
 * The program uses pytorch and uses a GPU by default, if it's found, else the CPU is used. Make sure you have the GPU setup correctly if you want to run it on a GPU.
 Running the program to predict shouldn't take long in CPUs, but training will take too long. I recommend using a GPU for training.
@@ -182,3 +169,23 @@ lesser RAM for training and less than 8GB can run inference very easily. If you 
   instead of loading all the data into memory. This will reduce the RAM usage, but will increase the training time as the data will be loaded from the disk each time and inference will have to be run for
   models like whisper, mediapipe, etc.
 * The program was developed and tested on python 3.10 It should work on python 3.9 and above, but I haven't tested it on those versions.* 
+
+
+### Sample output:
+#### Face model:
+
+<img src="display_files/angry.png" width="500" style="margin-right: 10px;">
+<img src="display_files/angry_emotion.jpg" width="300" style="margin-right: 10px;">
+<img src="display_files/angry_grad_cam.jpg" width="300">
+
+<p></p>
+
+<img src="display_files/child smile.png" width="300" style="margin-right: 10px; margin-left: 200px;">
+<img src="display_files/child_smile_emotion.jpg" width="300" style="margin-right: 10px;">
+<img src="display_files/child_smile_grad_cam.jpg" width="300" style="margin-right: 10px;">
+
+<p></p>
+
+<img src="display_files/nervous_woman.png" width="300" style="margin-right: 10px; margin-left: 200px;">
+<img src="display_files/nervous_woman_emotion.jpg" width="300" style="margin-right: 10px;">
+<img src="display_files/nervous_woman_grad_cam.jpg" width="300" style="margin-right: 10px;">
