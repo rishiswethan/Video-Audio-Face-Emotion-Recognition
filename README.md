@@ -1,3 +1,36 @@
+### Summary:
+This is a multimodal emotion detection model that uses audio and sequence of images from a video to predict the emotion of the speaker. The repo contains 2 primary models, audio tone recognition model, that uses a
+CNN to predict the emotion from the audio, and a facial emotion recognition model, that uses a CNN and optional mediapipe face landmarks data to predict the emotion from the face. The 3rd model combines the audio of a video clip,
+and a sequence of images from the video clip, passed to an LSTM to predict the emotion of the speaker. All 3 models have the ability to tune hyperparameters, like if landmarks should be used, which model to use as CNN, number of LSTM units, dense layers, etc.
+
+
+### Sample output:
+#### Face model:
+
+<table>
+  <tr>
+    <td><img src="display_files/child smile.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/child_smile_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/child_smile_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
+  </tr>
+  <tr>
+    <td><img src="display_files/nervous_woman.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/nervous_woman_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/nervous_woman_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
+  </tr>
+  <tr>
+    <td><img src="display_files/disgust_2.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/disgust_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/disgust_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
+  </tr>
+  <tr>
+    <td><img src="display_files/angry.png" width="300" style="margin-right: 10px;"></td>
+    <td><img src="display_files/angry_emotion.jpg" width="200" style="margin-right: 10px;"></td>
+    <td><img src="display_files/angry_grad_cam.jpg" width="200"></td>
+  </tr>
+</table>
+
+
 ### To run the program
 1) Install requirements using
    - `python -m venv venv`
@@ -171,28 +204,6 @@ lesser RAM for training and less than 8GB can run inference very easily. If you 
 * The program was developed and tested on python 3.10 It should work on python 3.9 and above, but I haven't tested it on those versions.* 
 
 
-### Sample output:
-#### Face model:
-
-<table>
-  <tr>
-    <td><img src="display_files/child smile.png" width="300" style="margin-right: 10px;"></td>
-    <td><img src="display_files/child_smile_emotion.jpg" width="200" style="margin-right: 10px;"></td>
-    <td><img src="display_files/child_smile_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
-  </tr>
-  <tr>
-    <td><img src="display_files/nervous_woman.png" width="300" style="margin-right: 10px;"></td>
-    <td><img src="display_files/nervous_woman_emotion.jpg" width="200" style="margin-right: 10px;"></td>
-    <td><img src="display_files/nervous_woman_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
-  </tr>
-  <tr>
-    <td><img src="display_files/disgust_2.png" width="300" style="margin-right: 10px;"></td>
-    <td><img src="display_files/disgust_emotion.jpg" width="200" style="margin-right: 10px;"></td>
-    <td><img src="display_files/disgust_grad_cam.jpg" width="200" style="margin-right: 10px;"></td>
-  </tr>
-  <tr>
-    <td><img src="display_files/angry.png" width="300" style="margin-right: 10px;"></td>
-    <td><img src="display_files/angry_emotion.jpg" width="200" style="margin-right: 10px;"></td>
-    <td><img src="display_files/angry_grad_cam.jpg" width="200"></td>
-  </tr>
-</table>
+### Contributing:
+I've made this project public so that it can be used by anyone who wants to use it. I've tried to make it as easy to use as possible, but if you have any questions or suggestions, create an issue or discuss it in the discussions section.
+I'll try to answer them as soon as possible. If you want to contribute, create a pull request. I'll try to review it as soon as possible.
