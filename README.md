@@ -1,8 +1,9 @@
 ### Summary:
-This is a multimodal emotion detection model that uses audio and sequence of images from a video to predict the emotion of the speaker. The repo contains 2 primary models, audio tone recognition model, that uses a
-CNN to predict the emotion from the audio, and a facial emotion recognition model, that uses a CNN and optional mediapipe face landmarks data to predict the emotion from the face. The 3rd model combines the audio of a video clip,
-and a sequence of images from the video clip, passed to an LSTM to predict the emotion of the speaker. All 3 models have the ability to tune hyperparameters, like if landmarks should be used, which model to use as CNN, number of LSTM units, dense layers, etc.
-
+This multimodal emotion detection model predicts a speaker's emotion using audio and image sequences from videos.
+The repository contains two primary models: an audio tone recognition model with a CNN for audio-based emotion prediction, and a facial emotion recognition model using a CNN and optional mediapipe face landmarks for facial emotion prediction.
+The third model combines a video clip's audio and image sequences, processed through an LSTM for speaker emotion prediction.
+Hyperparameters such as landmark usage, CNN model selection, LSTM units, and dense layers are tuned for optimal accuracy using included modules.
+For new datasets, follow the instructions below to retune the hyperparameters.
 
 ### Sample output:
 #### Face model:
