@@ -4,7 +4,7 @@ The repository contains two primary models: an audio tone recognition model with
 The third model combines a video clip's audio and image sequences, processed through an LSTM for speaker emotion prediction.
 Hyperparameters such as landmark usage, CNN model selection, LSTM units, and dense layers are tuned for optimal accuracy using included modules.
 For new datasets, follow the instructions below to retune the hyperparameters.
-
+_______________
 ### Sample output:
 #### Face model:
 
@@ -31,6 +31,27 @@ For new datasets, follow the instructions below to retune the hyperparameters.
   </tr>
 </table>
 
+____________________
+#### Audio model:
+
+[angry_alex.mp4](display_files%2Fangry_alex.mp4)<br><br>
+Prediction labels:<br>
+Sad/Fear: 0.0%<br>
+Neutral: 0.0%<br>
+Happy: 0.0%<br>
+Angry: 100.0%<br>
+Surprise/Disgust: 0.0%<br>
+
+____________________
+[audio_happy.mp4](display_files%2Faudio_happy.mp4)<br><br>
+Prediction labels:
+Sad/Fear: 0.0%<br>
+Neutral: 0.0%<br>
+Happy: 100.0%<br>
+Angry: 0.0%<br>
+Surprise/Disgust: 0.0%
+_____________
+
 
 ### To run the program
 1) Install requirements using
@@ -49,7 +70,7 @@ For new datasets, follow the instructions below to retune the hyperparameters.
 2) `python setup.py`
 3) `python run.py`
    - When you run prediction from the one of the 3 models, you'll get a menu to choose the model you want to use.
-
+_______________
 
 ### To preprocess data
 1) Your data should be formatted like the example data [here](https://drive.google.com/file/d/1D1edFCrX6dffawxfzutSC5Fc5HXDITtS/view?usp=sharing). Have a look at `config.py` for a 
@@ -71,7 +92,8 @@ glimpse of the correct way to set file paths. The data should be in the followin
         - FER
         - CK+
         - RAF
-    
+
+_______________
 ```html
    data 
     ├───training_AV                   // Audio visual data used for training the combined model
@@ -112,7 +134,7 @@ The default is the final commit
 like "surprise" for which there was very little data, so I combined it with disgust. You can disable this simplification by setting the
 `EMOTION_INDEX` to `FULL_EMOTION_INDEX`, and `EMOTION_INDEX_REVERSE` to `FULL_EMOTION_INDEX_REVERSE` in the `config.py` file.
 
-
+___________
 ### To train the model
 1) Choose the train option from the run.py menu
 2) The tuned hyperparameters are in the best_hyperameters.json file that's in the respective model's folder. You can change them if you want, but the default values are the result of my hyperparameter tuning.
@@ -120,7 +142,7 @@ like "surprise" for which there was very little data, so I combined it with disg
 should you wish to try tuning them with your own ranges, feel free to do so.
 4) The trained model will be saved the 'models' folder.
 
-
+__________
 ### To use new datasets
 1) You'd have to write code to convert the labels of the new dataset to the format of the labels of the datasets used here. I've mentioned the correct format below
    * `<dataset_name>_<s.no>_<emotion_index>.<file_extension>`
@@ -138,7 +160,7 @@ I already have the code to split data in the `get_data.py` file of the combined 
 5) You'll have to include this correctly labelled dataset path in the corresponding _`ALL_EXTRACTED_<model_name>_FOLDERS`_ path list. You'll have a clearer understanding if you look at how
 I wrote the various paths for this in the config.py file.
 
-
+____________
 ### How everything works:
 * #### General summary:
     - ##### Programs:
@@ -189,7 +211,7 @@ I wrote the various paths for this in the config.py file.
     - The image model outputs are concatenated and arranged as a time series and passed through LSTM layer(s) so that temporal information through frames is captured.
     - The frames time series result, audio CNN result and sentiment results are passed through dense layer(s) to get the final emotion prediction.
 
-
+_____________
 ### Note:
 * The program uses pytorch and uses a GPU by default, if it's found, else the CPU is used. Make sure you have the GPU setup correctly if you want to run it on a GPU.
 Running the program to predict shouldn't take long in CPUs, but training will take too long. I recommend using a GPU for training.
@@ -204,7 +226,7 @@ lesser RAM for training and less than 8GB can run inference very easily. If you 
   models like whisper, mediapipe, etc.
 * The program was developed and tested on python 3.10 It should work on python 3.9 and above, but I haven't tested it on those versions.* 
 
-
+_____________
 ### Contributing:
 I've made this project public so that it can be used by anyone who wants to use it. I've tried to make it as easy to use as possible, but if you have any questions or suggestions, create an issue or discuss it in the discussions section.
 I'll try to answer them as soon as possible. If you want to contribute, create a pull request. I'll try to review it as soon as possible.
