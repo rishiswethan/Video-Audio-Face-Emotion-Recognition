@@ -42,7 +42,6 @@ Happy: 0.0%<br>
 Angry: 100.0%<br>
 Surprise/Disgust: 0.0%<br>
 
-____________________
 [audio_happy.mp4](display_files%2Faudio_happy.mp4)<br><br>
 Prediction labels:
 Sad/Fear: 0.0%<br>
