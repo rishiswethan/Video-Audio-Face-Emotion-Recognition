@@ -35,7 +35,7 @@ ____________________
 #### Audio model:
 
 [angry_alex.mp4](display_files%2Fangry_alex.mp4)<br><br>
-Prediction labels:<br>
+**_Prediction labels:_**<br>
 Sad/Fear: 0.0%<br>
 Neutral: 0.0%<br>
 Happy: 0.0%<br>
@@ -43,7 +43,7 @@ Angry: 100.0%<br>
 Surprise/Disgust: 0.0%<br>
 
 [audio_happy.mp4](display_files%2Faudio_happy.mp4)<br><br>
-Prediction labels:<br>
+**_Prediction labels:_**<br>
 Sad/Fear: 0.0%<br>
 Neutral: 0.0%<br>
 Happy: 100.0%<br>
