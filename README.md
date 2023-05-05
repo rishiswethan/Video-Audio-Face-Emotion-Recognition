@@ -50,7 +50,9 @@ Happy: 100.0%<br>
 Angry: 0.0%<br>
 Surprise/Disgust: 0.0%
 _____________
-
+#### Video/combined model:
+<Program implemented, display items yet to be added>
+_________________
 
 ### To run the program
 1) Install python 3.10
