@@ -53,7 +53,8 @@ _____________
 
 
 ### To run the program
-1) Install requirements using
+1) Install python 3.10
+2) Install requirements using
    - `python -m venv venv`
    - `venv/Scripts/activate`
    - `pip install -r requirements.txt`
@@ -66,8 +67,8 @@ _____________
          - There should be a download size of 2.3GB if it is downloading the GPU version correctly. If it's something like 200MB, that's the CPU version.
          - If that didn't work, simply install the CPU version for now. It'll slow down transcription but it'll work.
            - `pip install torch`
-2) `python setup.py`
-3) `python run.py`
+3) `python setup.py`
+4) `python run.py`
    - When you run prediction from the one of the 3 models, you'll get a menu to choose the model you want to use.
 _______________
 
