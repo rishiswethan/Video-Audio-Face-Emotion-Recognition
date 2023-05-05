@@ -5,7 +5,7 @@ The third model combines a video clip's audio and image sequences, processed thr
 Hyperparameters such as landmark usage, CNN model selection, LSTM units, and dense layers are tuned for optimal accuracy using included modules.
 For new datasets, follow the instructions below to retune the hyperparameters.
 _______________
-### Sample output:
+### Sample output of all 3 models:
 #### Face model:
 
 <table>
