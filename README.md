@@ -69,8 +69,8 @@ _____________
            - `pip install torch`
 3) `python setup.py`
 4) `python run.py`
-   - When you run prediction from the one of the 3 models, you'll get a menu to choose the model you want to use.
-This will give you all options you need for inference. For things like train, preprocessing, etc, follow the instructions below.
+   - When you run the program, you'll be asked to choose one of the 3 models. You can then follow the on-screen menu to run inference, training, etc.
+   - Above instructions will set you up to run inference only. For things like training, preprocessing, etc, follow the instructions below.
 _______________
 
 ### To preprocess data
