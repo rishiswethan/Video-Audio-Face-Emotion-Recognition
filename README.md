@@ -70,6 +70,7 @@ _____________
 3) `python setup.py`
 4) `python run.py`
    - When you run prediction from the one of the 3 models, you'll get a menu to choose the model you want to use.
+This will give you all options you need for inference. For things like train, preprocessing, etc, follow the instructions below.
 _______________
 
 ### To preprocess data
