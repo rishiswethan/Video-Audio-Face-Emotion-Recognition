@@ -40,10 +40,12 @@ def fit(
         train_loader: torch.utils.data.DataLoader,
         val_loader: torch.utils.data.DataLoader,
         callbacks_function=None,
+        continue_training=False,
         opt_func=adam_opt,
         device=device,
         num_retries_inner=10,
-        max_retry=10
+        max_retry=10,
+        evaluate=evaluate
 ):
     """
     Meant to resemble the fit function in keras.
@@ -58,7 +60,9 @@ def fit(
     callbacks_function - A function that takes the model and returns a list of callbacks
     opt_func - The optimizer function to use
     device - The device to use
-    num_retries - Number of times to retry training if it fails
+    num_retries_inner - Number of times to retry the training step if it fails
+    max_retry - Number of times to retry training if it fails, this is for operations, other than the training step, that may fail
+    evaluate - The function to use for evaluation. This is useful if you want to use a different evaluation function
 
     Returns
     -------
@@ -137,6 +141,7 @@ def fit(
                 result=result,
                 model=model,
                 defined_callbacks=defined_callbacks,
+                continue_training=continue_training,
             )
 
             model.epoch_end(epoch, result)
