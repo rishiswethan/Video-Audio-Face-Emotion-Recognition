@@ -56,11 +56,15 @@ _________________
 
 ### To run the program
 1) Install python 3.10
-2) Install requirements using
+2) Install everything you need
+   - `git clone https://github.com/rishiswethan/Video-Audio-Face-Emotion-Recognition.git`
+   - `cd Video-Audio-Face-Emotion-Recognition`
    - `git clone https://github.com/rishiswethan/pytorch_utils.git source/pytorch_utils`
    - `cd source/pytorch_utils && git checkout v1.0.3 && cd ../..`
    - `python -m venv venv`
-   - `venv/Scripts/activate`
+   - Activate the virtual environment
+     - Linux/MacOS: `source venv/bin/activate`
+     - Windows: `venv\Scripts\activate`
    - `pip install -r requirements.txt`
    - `python -m spacy download en_core_web_lg`
    - To setup the GPU version of pytorch, follow the instructions in this [link](https://github.com/openai/whisper/discussions/47).
