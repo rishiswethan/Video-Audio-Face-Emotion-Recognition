@@ -57,6 +57,8 @@ _________________
 ### To run the program
 1) Install python 3.10
 2) Install requirements using
+   - `git clone https://github.com/rishiswethan/pytorch_utils.git source/pytorch_utils`
+   - `cd source/pytorch_utils && git checkout v1.0.3 && cd ../..`
    - `python -m venv venv`
    - `venv/Scripts/activate`
    - `pip install -r requirements.txt`
